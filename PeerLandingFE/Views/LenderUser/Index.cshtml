@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Lender";
+}
+
+<h2>Master Data Lender</h2>
+
+<table class="table table-striped" id="lenderTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Balance</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!-- Modal Edit Lender -->
+<div class="modal fade" id="editLenderModal" tabindex="-1" role="dialog" aria-labelledby="editLenderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editLenderModalLabel">Edit Lender</h5>
+            </div>
+            <div class="modal-body">
+                <form id="editLenderForm">
+                    <div class="form-group">
+                        <label for="lenderName">Name</label>
+                        <input type="text" class="form-control" id="lenderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lenderBalance">Balance</label>
+                        <input type="number" class="form-control" id="lenderBalance" required>
+                    </div>
+                    <input type="hidden" id="lenderId" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="updateLender()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/mstlender.js"></script>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+}
